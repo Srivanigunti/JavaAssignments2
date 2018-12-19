@@ -36,7 +36,7 @@ public class Date
 		int newMonth = givenDate.month - date.month;
 		int newyear = givenDate.year - date.year;
 		//is obtained and returned in an int array. The first element of the array should represent
-		int differences[] =	{newDate,newMonth,newyear};
+		int differences[]  = {newDate,newMonth,newyear};
 		return differences;	
 		//The difference of days, months and years in the invoking and parameter Date objects 
 		//is obtained and returned in an int array. The first element of the array should represent
