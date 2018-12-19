@@ -1,57 +1,36 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
+public class DateTest 
+{
+	private Date date;
+	
+	@Before
+	public void setUp()
+	{
+		date = new Date(18,11,1996);
+	}
 
-public class DateTest {
-	private Date dateOne;
-	
 	@Test
-	public void testForString() //toString method returns the current date
+	public void testForDate()
 	{
-		dateOne=new Date(20,04,2017);
-		String result=dateOne.toString();
-		assertEquals("20/04/2017" ,result);
-		
+		String result =date.toString();
+		assertEquals("18/11/1996",result);
 	}
 	
 	@Test
-	//It returns the true because invoking object is greater
-	public void invokingObjectIsSmallerThanDateObject () 
-	{  
-		dateOne=new Date(20,04,2019);
-		boolean result=dateOne.isSmaller(dateOne);
-		assertEquals(true,result);
-		
-	}
-	
-	@Test
-	 //It returns the false because invoking object is greater 
-	public void invokingObjectIsGreaterThanDateObject () 
+	public void testForOnlyDate()
 	{
-		dateOne=new Date(20,04,2027);
-		boolean result=dateOne.isSmaller(dateOne);
-		assertEquals(false,result);
+		boolean result = date.isSmaller(date);
+		assertTrue(result);
 	}
 	
 	@Test
-	//It stores the difference of date,month,year in the form of an array and invoking date is smaller than given date
-	public void diffrenceDateAndMonthAndYearInvokingDateIsSmaller()
+	public void testForDifferenceDate()
 	{
-		dateOne=new Date(20,04,2016);
-		int[] result=dateOne.diff(dateOne);
-		int[] expected={396,13,1};
-		assertArrayEquals(expected,result);
+		int expected[] = {14,5,24};
+		assertArrayEquals(expected,date.diff(date));
 	}
-	
-	@Test
-	//It stores the difference of date,month,year in the form of an array and invoking date is Greater than given date
-	public void diffrenceDateAndMonthAndYearInvokingDateIsGreater()
-	{
-		dateOne=new Date(20,04,2019);
-		int[] result=dateOne.diff(dateOne);
-		int[] expected={699,23,2};
-		assertArrayEquals(expected,result);
-	}
-	
 }
