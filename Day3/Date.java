@@ -18,7 +18,7 @@ public class Date
 	public boolean isSmaller(Date date)
 	{
 		// method to check whether a date is smaller than the other 
-		Date givenDate = new Date(18,12,2019);
+		Date givenDate = new Date(22,12,2019);
 		if(date.date<givenDate.date)
 		{
 			//If the value of invoking Date object is smaller than the given object, true is returned otherwise false is returned.
@@ -30,7 +30,7 @@ public class Date
 	public int[] diff(Date date)
 	{
 		//method to find out the difference of days, months and years in two dates.
-		Date givenDate = new Date(18,12,2019);
+		Date givenDate = new Date(22,12,2019);
 		//The difference of days, months and years in the invoking and parameter Date objects 
 		int newDate = givenDate.date - date.date;
 		int newMonth = givenDate.month - date.month;
